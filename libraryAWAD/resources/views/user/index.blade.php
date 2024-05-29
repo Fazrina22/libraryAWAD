@@ -19,9 +19,9 @@
                     <td>{{$user->email}}</td>
                     <td>{{$user->role}}</td>
                     <td>
-                        <a href="{{route('user.show', $user)}}">Show</a>
-                        <a href="{{route('user.edit', $user)}}">Edit</a>
                         <form action="{{route('user.destroy', $user)}}" method="post">
+                            <a href="{{route('user.show', $user)}}">Show</a>
+                            <a href="{{route('user.edit', $user)}}">Edit</a>
                             @csrf
                             @method('delete')
                             <input type="submit" value="Delete">

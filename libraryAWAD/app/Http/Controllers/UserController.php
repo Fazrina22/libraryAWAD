@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -12,6 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
+        if(!Gate::allows('isSupervisor', Auth::user())){
+            abort(403);
+        }
         $users = User::all();
 
         return view('user.index', compact('users'));
@@ -22,6 +27,9 @@ class UserController extends Controller
      */
     public function create()
     {
+        if(!Gate::allows('isSupervisor', Auth::user())){
+            abort(403);
+        }
         return view('user.create');
     }
 
@@ -30,6 +38,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        if(!Gate::allows('isSupervisor', Auth::user())){
+            abort(403);
+        }
         $data = [
           'name' => $request['name'],
           'email' => $request['email'],
@@ -47,6 +58,9 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+        if(!Gate::allows('isSupervisor', Auth::user())){
+            abort(403);
+        }
         return view('user.show', compact('user'));
     }
 
@@ -55,7 +69,10 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        if(!Gate::allows('isSupervisor', Auth::user())){
+            abort(403);
+        }
+        return view('user.edit', compact('user'));
     }
 
     /**
@@ -63,7 +80,18 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        if(!Gate::allows('isSupervisor', Auth::user())){
+            abort(403);
+        }
+        $data = [
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'role' => $request['role'],
+        ];
+
+        $user->update($data);
+
+        return redirect(route('user.index'));
     }
 
     /**
@@ -71,6 +99,11 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        if(!Gate::allows('isSupervisor', Auth::user())){
+            abort(403);
+        }
+        $user->delete();
+
+        return redirect(route('user.index'));
     }
 }

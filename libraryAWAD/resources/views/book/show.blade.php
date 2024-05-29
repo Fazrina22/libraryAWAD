@@ -25,6 +25,10 @@
             </tr>
             <tr>
                 <th>Category</th>
+                <td>{{$book->category}}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
                 <td>{{$book->status}}</td>
             </tr>
         </table>

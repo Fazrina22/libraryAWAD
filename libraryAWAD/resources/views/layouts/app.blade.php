@@ -30,9 +30,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        @if(\Illuminate\Support\Facades\Auth::user()->role == 'Supervisor')
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('user.index')}}">Volunteer</a>
                         </li>
+                        @endif
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('member.index')}}">Member</a>
                         </li>
@@ -41,6 +43,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('record.index')}}">Record</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('search.keyword')}}">Search</a>
                         </li>
                     </ul>
 

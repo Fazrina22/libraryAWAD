@@ -34,7 +34,6 @@
                             <option>Non-Fiction</option>
                             <option>Journal</option>
                             <option>Encyclopedia</option>
-
                         </select>
                     </td>
                 </tr>

@@ -25,9 +25,9 @@
                     <td>{{$book->category}}</td>
                     <td>{{$book->status}}</td>
                     <td>
-                        <a href="{{route('book.show', $book)}}">Show</a>
-                        <a href="{{route('book.edit', $book)}}">Edit</a>
                         <form action="{{route('book.destroy', $book)}}" method="post">
+                            <a href="{{route('book.show', $book)}}">Show</a>
+                            <a href="{{route('book.edit', $book)}}">Edit</a>
                             @csrf
                             @method('delete')
                             <input type="submit" value="Delete">

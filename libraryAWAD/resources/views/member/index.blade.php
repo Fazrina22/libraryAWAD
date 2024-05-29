@@ -21,9 +21,9 @@
                     <td>{{$member->address}}</td>
                     <td>{{$member->contact}}</td>
                     <td>
-                        <a href="{{route('member.show', $member)}}">Show</a>
-                        <a href="{{route('member.edit', $member)}}">Edit</a>
                         <form action="{{route('member.destroy', $member)}}" method="post">
+                            <a href="{{route('member.show', $member)}}">Show</a>
+                            <a href="{{route('member.edit', $member)}}">Edit</a>
                             @csrf
                             @method('delete')
                             <input type="submit" value="Delete">

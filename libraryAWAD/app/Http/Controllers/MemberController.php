@@ -55,7 +55,7 @@ class MemberController extends Controller
      */
     public function edit(Member $member)
     {
-        //
+        return view('member.edit', compact('member'));
     }
 
     /**
@@ -63,7 +63,16 @@ class MemberController extends Controller
      */
     public function update(Request $request, Member $member)
     {
-        //
+        $data = [
+            'name' => $request['name'],
+            'ic' => $request['ic'],
+            'address' => $request['address'],
+            'contact' => $request['contact'],
+        ];
+
+        $member->update($data);
+
+        return redirect(route('member.index'));
     }
 
     /**
@@ -71,6 +80,8 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
-        //
+        $member->delete();
+
+        return redirect(route('member.index'));
     }
 }

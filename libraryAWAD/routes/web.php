@@ -25,3 +25,7 @@ Route::resource('user', \App\Http\Controllers\UserController::class);
 Route::resource('member', \App\Http\Controllers\MemberController::class);
 Route::resource('book', \App\Http\Controllers\BookController::class);
 Route::resource('record', \App\Http\Controllers\RecordController::class);
+
+Route::put('record/return/{record}', [\App\Http\Controllers\RecordController::class, 'return'])->name('record.return');
+Route::get('search/record',[\App\Http\Controllers\SearchController::class, 'search'])->name('search.record');
+Route::get('search', [\App\Http\Controllers\SearchController::class, 'keyword'])->name('search.keyword');
