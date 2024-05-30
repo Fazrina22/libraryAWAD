@@ -31,3 +31,5 @@ Route::put('record/return/{record}', [\App\Http\Controllers\RecordController::cl
 Route::get('search/record',[\App\Http\Controllers\SearchController::class, 'search'])->name('search.record');
 Route::get('search', [\App\Http\Controllers\SearchController::class, 'keyword'])->name('search.keyword');
 Route::get('available/book', [BookController::class, 'available'])->name('book.available');
+Route::get('profile/user', [\App\Http\Controllers\UserController::class, 'profile'])->name('user.profile');
+Route::put('profile/update/{user}', [\App\Http\Controllers\UserController::class, 'updateProfile'])->name('user.updateProfile');

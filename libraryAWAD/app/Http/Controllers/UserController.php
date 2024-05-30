@@ -94,6 +94,18 @@ class UserController extends Controller
         return redirect(route('user.index'));
     }
 
+    public function updateProfile(Request $request, User $user)
+    {
+
+        $data = [
+            'password' => bcrypt($request['password']),
+        ];
+
+        $user->update($data);
+
+        return redirect(route('user.profile'));
+    }
+
     /**
      * Remove the specified resource from storage.
      */
@@ -105,5 +117,11 @@ class UserController extends Controller
         $user->delete();
 
         return redirect(route('user.index'));
+    }
+
+    public function profile(){
+        $user = Auth::user();
+
+        return view('user.profile', compact('user'));
     }
 }
