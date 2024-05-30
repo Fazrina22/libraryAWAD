@@ -38,7 +38,7 @@
                     </td>
                 </tr>
             </table>
-            <input type="submit" value="Add New Book">
+            <input class="btn btn-outline-dark" type="submit" value="Add New Book">
         </form>
     </div>
 @endsection

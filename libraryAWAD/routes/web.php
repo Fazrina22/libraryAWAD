@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,4 @@ Route::resource('record', \App\Http\Controllers\RecordController::class);
 Route::put('record/return/{record}', [\App\Http\Controllers\RecordController::class, 'return'])->name('record.return');
 Route::get('search/record',[\App\Http\Controllers\SearchController::class, 'search'])->name('search.record');
 Route::get('search', [\App\Http\Controllers\SearchController::class, 'keyword'])->name('search.keyword');
+Route::get('available/book', [BookController::class, 'available'])->name('book.available');

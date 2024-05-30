@@ -23,7 +23,7 @@
                     <td><input type="text" name="contact"></td>
                 </tr>
             </table>
-            <input type="submit" value="Add New Member">
+            <input class="btn btn-outline-dark" type="submit" value="Add New Member">
         </form>
     </div>
 @endsection

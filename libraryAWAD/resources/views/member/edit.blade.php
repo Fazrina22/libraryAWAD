@@ -27,7 +27,7 @@
                     <td><input type="text" name="contact" value="{{$member->contact}}"></td>
                 </tr>
             </table>
-            <input type="submit" value="Update Member Record">
+            <input class="btn btn-outline-warning" type="submit" value="Update Member Record">
         </form>
     </div>
 @endsection

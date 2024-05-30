@@ -87,4 +87,11 @@ class BookController extends Controller
 
         return redirect(route('book.index'));
     }
+
+    public function available()
+    {
+        $books = Book::where('status', 'Available')->get();
+
+        return view('book.available', ['books' => $books]);
+    }
 }

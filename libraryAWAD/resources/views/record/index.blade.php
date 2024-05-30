@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <h1>List of Records</h1>
-        <a href="{{route('record.create')}}">Add New Record</a>
+        <a class="btn btn-dark my-2" href="{{route('record.create')}}">Add New Record</a>
 
         <table class="table table-striped">
             <tr>
@@ -11,8 +11,8 @@
                 <th>Member Name</th>
                 <th>Borrowing Date</th>
                 <th>Returning Date</th>
-                <th>Action</th>
-                <th>Return Book</th>
+                <th class="text-center">Action</th>
+                <th class="text-center">Return Book</th>
             </tr>
 
             @foreach ($records as $record)
@@ -22,21 +22,21 @@
                     <td>{{$record->member->name}}</td>
                     <td>{{$record->borrowed_date}}</td>
                     <td>{{$record->returned_date}}</td>
-                    <td>
+                    <td class="text-center">
                         <form action="{{route('record.destroy', $record)}}" method="post">
-                            <a href="{{route('record.show', $record)}}">Show</a>
-                            <a href="{{route('record.edit', $record)}}">Edit</a>
+                            <a class="btn btn-primary" href="{{route('record.show', $record)}}">Show</a>
+                            <a class="btn btn-warning" href="{{route('record.edit', $record)}}">Edit</a>
                             @csrf
                             @method('delete')
-                            <input type="submit" value="Delete">
+                            <input class="btn btn-danger" type="submit" value="Delete">
                         </form>
                     </td>
-                    <td>
+                    <td class="text-center">
                         @if($record->returned_date == null)
                         <form method="post" action="{{route('record.return', $record)}}">
                             @csrf
                             @method('put')
-                            <input type="submit" value="Return Book">
+                            <input class="btn btn-secondary" type="submit" value="Return Book">
                         </form>
                         @else
                             Returned

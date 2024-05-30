@@ -24,7 +24,7 @@
                     </td>
                 </tr>
             </table>
-            <input type="submit" value="Add New Volunteer">
+            <input class="btn btn-outline-dark" type="submit" value="Add New Volunteer">
         </form>
     </div>
 @endsection

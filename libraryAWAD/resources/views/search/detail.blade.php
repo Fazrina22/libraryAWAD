@@ -23,7 +23,7 @@
             <form action="{{route('record.return', $record)}}" method="post">
                 @csrf
                 @method('put')
-                <input type="submit" value="Return Book">
+                <input class="btn btn-secondary" type="submit" value="Return Book">
             </form>
         @endforeach
     </div>

@@ -100,7 +100,7 @@
                     <td><input type="date" name="returned_date" value="{{$record->returned_date}}"></td>
                 </tr>
             </table>
-            <input type="submit" value="Update Borrowing Record">
+            <input class="btn btn-outline-warning" type="submit" value="Update Borrowing Record">
         </form>
     </div>
 @endsection

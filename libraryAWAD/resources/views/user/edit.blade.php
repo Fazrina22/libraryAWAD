@@ -19,7 +19,7 @@
                     <td><input type="text" name="email" value="{{$user->email}}"></td>
                 </tr>
             </table>
-            <input type="submit" value="Update Volunteer">
+            <input class="btn btn-outline-warning" type="submit" value="Update Volunteer">
         </form>
     </div>
 @endsection

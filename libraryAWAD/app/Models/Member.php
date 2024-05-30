@@ -16,7 +16,7 @@ class Member extends Model
         'contact',
     ];
 
-    public function record()
+    public function records()
     {
         return $this->hasMany(Record::class);
     }

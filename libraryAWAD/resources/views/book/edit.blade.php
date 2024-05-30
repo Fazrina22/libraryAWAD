@@ -12,19 +12,19 @@
                 </tr>
                 <tr>
                     <th>Title</th>
-                    <td><input type="text" name="title" {{$book->title}}></td>
+                    <td><input type="text" name="title" value="{{$book->title}}"></td>
                 </tr>
                 <tr>
                     <th>Author</th>
-                    <td><input type="text" name="author" {{$book->author}}></td>
+                    <td><input type="text" name="author" value="{{$book->author}}"></td>
                 </tr>
                 <tr>
                     <th>Publisher Name</th>
-                    <td><input type="text" name="publisherName" {{$book->publisherName}}></td>
+                    <td><input type="text" name="publisherName" value="{{$book->publisherName}}"></td>
                 </tr>
                 <tr>
                     <th>Published Year</th>
-                    <td><input type="text" name="publishedYear" {{$book->publishedYear}}></td>
+                    <td><input type="text" name="publishedYear" value="{{$book->publishedYear}}"></td>
                 </tr>
                 <tr>
                     <th>Category</th>
@@ -43,7 +43,7 @@
                     </td>
                 </tr>
             </table>
-            <input type="submit" value="Update Book Record">
+            <input class="btn btn-outline-warning" type="submit" value="Update Book Record">
         </form>
 
     </div>

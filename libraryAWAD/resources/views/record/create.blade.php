@@ -84,7 +84,7 @@
                     <td><input type="date" name="borrowed_date"></td>
                 </tr>
             </table>
-            <input type="submit" value="Add New Record">
+            <input class="btn btn-outline-dark" type="submit" value="Add New Record">
         </form>
     </div>
 @endsection
