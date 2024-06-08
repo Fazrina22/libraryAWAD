@@ -16,7 +16,7 @@
                     <td>{{$record->member->name}}</td>
                 </tr>
                 <tr>
-                    <th>Book Title</th>
+                    <th>Borrowing Date</th>
                     <td>{{$record->borrowed_date}}</td>
                 </tr>
             </table>

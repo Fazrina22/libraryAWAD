@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('book_id')->constrained()->cascadeOnDelete()->cascadeOnDelete();
+            $table->foreignId('book_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('member_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->date('borrowed_date');
             $table->date('returned_date')->nullable();

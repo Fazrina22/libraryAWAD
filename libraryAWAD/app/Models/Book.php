@@ -18,7 +18,7 @@ class Book extends Model
         'status',
     ];
 
-    public function record()
+    public function records()
     {
         return $this->hasMany(Record::class);
     }

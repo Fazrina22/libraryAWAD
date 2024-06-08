@@ -12,84 +12,34 @@
                     <td>{{$record->id}}</td>
                 </tr>
                 <tr>
-                    <th>Book Name</th>
+                    <th>Book ID</th>
                     <td>
-                        <select name="book_id" id="book_select" onchange="selectBook()" required>
-                            <option value="{{$record->book_id}}">{{$record->book->title}}</option>
-                            <option value="0">Enter a valid Book ID</option>
+                        <input list="dataListBooks" name="book_id" class="form-control" id="book_input" value="{{$record->book->id}}" onchange="searchBook()">
+                        <datalist id="dataListBooks" >
+                            <option value="{{$record->book_id}}" selected>{{$record->book->title}}</option>
                             @foreach($books as $book)
                                 @if($book->id == $record->book_id)
                                     @continue
                                 @endif
                                 <option value="{{$book->id}}">{{$book->title}}</option>
                             @endforeach
-                        </select>
-                        <input type="text" id="book_input" value="{{$record->book->id}}" onchange="searchBook()">
-                        <script>
-                            book_input = document.getElementById('book_input');
-                            book_select = document.getElementById('book_select');
-
-                            function searchBook() {
-                                if (book_input.value !== "") {
-                                    book_select.setAttribute('disabled', '');
-                                    book_select.value = book_input.value;
-                                }
-                                if (book_select.value === "" || book_input.value === 0|| book_input.value === "") {
-                                    book_select.removeAttribute('disabled');
-                                    book_select.value = 0;
-                                }
-                            }
-                            function selectBook(){
-                                if(book_select.value !== 0){
-                                    book_input.value = book_select.value;
-                                    book_input.setAttribute('disabled', '');
-                                }
-                                if(book_select.value == 0){
-                                    book_input.removeAttribute('disabled');
-                                }
-                            }
-                        </script>
+                        </datalist>
                     </td>
                 </tr>
                 <tr>
-                    <th>Member Name</th>
+                    <th>Member ID</th>
                     <td>
-                        <select name="member_id" id="member_select" onchange="selectMember()" required>
-                            <option value="{{$record->member_id}}">{{$record->member->name}}</option>
-                            <option value="0">Enter a valid Member ID</option>
+                        <input class="form-control" list="dataListMembers" name="member_id" value="{{$record->member->id}}" id="member_input" required>
+                        <datalist  id="dataListMembers">
+                            <option value="{{$record->member_id}}" selected>{{$record->member->name}}</option>
                             @foreach($members as $member)
                                 @if($member->id == $record->member_id)
                                     @continue
                                 @endif
                                 <option value="{{$member->id}}">{{$member->name}}</option>
                             @endforeach
-                        </select>
-                        <input type="text" value="{{$record->member->id}}" id="member_input" onchange="searchMember()">
-                        <script>
-                            member_input = document.getElementById('member_input');
-                            member_select = document.getElementById('member_select');
+                        </datalist>
 
-                            function searchMember() {
-                                if (member_input.value !== "") {
-                                    member_select.setAttribute('disabled', '');
-                                    member_select.value = member_input.value;
-                                    if (member_select === "" || member_input === ""){
-                                        member_select.removeAttribute('disabled');
-                                        member_select.value=0;
-                                    }
-                                }
-                            }
-
-                            function selectMember(){
-                                if(member_select.value !== 0){
-                                    member_input.value = member_select.value;
-                                    member_input.setAttribute('disabled', '');
-                                }
-                                if(member_select.value == 0){
-                                    member_input.removeAttribute('disabled');
-                                }
-                            }
-                        </script>
                     </td>
                 </tr>
                 <tr>
@@ -98,7 +48,7 @@
                 </tr>
                 <tr>
                     <th>Returning Date</th>
-                    <td><input type="date" name="returned_date" value="{{$record->returned_date}}"></td>
+                    <td><input type="date" name="returned_date" min="{{$record->borrowed_date}}" value="{{$record->returned_date}}"></td>
                 </tr>
             </table>
             <input class="btn btn-outline-warning" type="submit" value="Update Borrowing Record">

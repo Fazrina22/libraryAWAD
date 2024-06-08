@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class RecordController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -78,6 +82,7 @@ class RecordController extends Controller
             'member_id' => $request['member_id'],
             'book_id' => $request['book_id'],
             'borrowed_date' => $request['borrowed_date'],
+            'returned_date' => $request['returned_date'],
         ];
 
         $record->update($data);

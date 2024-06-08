@@ -9,8 +9,8 @@
 
     <title>Kamunting Library</title>
 
-    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png"/>
-    <link rel="stylesheet" href="../assets/css/styles.min.css"/>
+    <link rel="shortcut icon" type="image/png" href="{{asset('assets/images/logos/favicon.png')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/css/styles.min.css')}}"/>
 
     <!-- Scripts -->
 {{--    @vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
@@ -79,7 +79,7 @@
                 <span>
                   <i class="ti ti-cards"></i>
                 </span>
-                            <span class="hide-menu">Borrowing Record</span>
+                            <span class="hide-menu">Borrow Record</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
@@ -164,14 +164,7 @@
                         </a>
                     </li>
                 </ul>
-                @auth
-                <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
-                    <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-                        <a href="{{route('record.create')}}"
-                           class="btn btn-primary">Add New Borrowing Record</a>
-                    </ul>
-                </div>
-                @endauth
+
             </nav>
         </header>
         <!--  Header End -->

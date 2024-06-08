@@ -27,13 +27,16 @@
                     <td>
                         <select name="category">
                             <option>Romance</option>
-                            <option>Horror</option>
+                            <option>Novel</option>
+                            <option>Religion</option>
+                            <option>Fantasy</option>
                             <option>Thriller</option>
                             <option>Fiction</option>
                             <option>Documentary</option>
                             <option>Non-Fiction</option>
-                            <option>Journal</option>
-                            <option>Encyclopedia</option>
+                            <option>Academic</option>
+                            <option>Children</option>
+                            <option>General Readings</option>
                         </select>
                     </td>
                 </tr>
