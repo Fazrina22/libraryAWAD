@@ -25,7 +25,7 @@
                     <td>{{$book->publishedYear}}</td>
                     <td>{{$book->category}}</td>
                     <td class="text-center">{{$book->status}}</td>
-                    <td class="text-center">
+                    <td class="col-4 text-center">
                         <form action="{{route('book.destroy', $book)}}" method="post">
                             <a class="btn btn-primary" href="{{route('book.show', $book)}}">Show</a>
                             <a class="btn btn-warning" href="{{route('book.edit', $book)}}">Edit</a>

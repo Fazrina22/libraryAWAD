@@ -28,7 +28,7 @@ class RecordController extends Controller
      */
     public function create()
     {
-        $books = Book::where('status','Available')->get();
+        $books = Book::where('status','=','Available')->get();
         $members = Member::all();
 
         return view('record.create', ['books' => $books, 'members' => $members]);
@@ -87,6 +87,21 @@ class RecordController extends Controller
 
         $record->update($data);
 
+        if($record->refresh()->returned_date != null){
+            $record->book->update(
+                [
+                    'status' => 'Available'
+                ]
+            );
+        }
+        else{
+            $record->book->update(
+                [
+                    'status' => 'Borrowed'
+                ]
+            );
+        }
+
         return redirect(route('record.index'));
     }
 
@@ -109,6 +124,11 @@ class RecordController extends Controller
     public function destroy(Record $record)
     {
         //
+        $record->book->update(
+            [
+                'status' => 'Available',
+            ]
+        );
         $record->delete();
 
         return redirect(route('record.index'));

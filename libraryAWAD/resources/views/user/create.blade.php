@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container">
-        <h1>Add New Volunteer</h1>
+        <h1>Add New User</h1>
         <form method="post" action="{{route('user.store')}}">
             @csrf
             @method('post')
@@ -24,7 +24,7 @@
                     </td>
                 </tr>
             </table>
-            <input class="btn btn-outline-dark" type="submit" value="Add New Volunteer">
+            <input class="btn btn-outline-dark" type="submit" value="Add New User">
         </form>
     </div>
 @endsection

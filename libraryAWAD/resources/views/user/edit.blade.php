@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container">
-        <h1>Edit Volunteer Details</h1>
+        <h1>Edit User Details</h1>
         <form method="post" action="{{route('user.update', $user)}}">
             @csrf
             @method('put')
@@ -19,7 +19,7 @@
                     <td><input type="text" name="email" value="{{$user->email}}"></td>
                 </tr>
             </table>
-            <input class="btn btn-outline-warning" type="submit" value="Update Volunteer">
+            <input class="btn btn-outline-warning" type="submit" value="Update User">
         </form>
     </div>
 @endsection

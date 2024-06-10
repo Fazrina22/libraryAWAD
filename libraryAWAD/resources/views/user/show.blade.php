@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container">
-        <h1>Volunteer Details</h1>
+        <h1>User Details</h1>
         <table class="table table-striped">
             <tr>
                 <th>ID</th>

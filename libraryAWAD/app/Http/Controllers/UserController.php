@@ -91,7 +91,6 @@ class UserController extends Controller
         $data = [
             'name' => $request['name'],
             'email' => $request['email'],
-            'role' => $request['role'],
         ];
 
         $user->update($data);

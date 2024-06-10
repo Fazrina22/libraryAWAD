@@ -7,7 +7,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Kamunting Library</title>
+    <title>Rural Library</title>
 
     <link rel="shortcut icon" type="image/png" href="{{asset('assets/images/logos/favicon.png')}}"/>
     <link rel="stylesheet" href="{{asset('assets/css/styles.min.css')}}"/>
@@ -28,7 +28,7 @@
 {{--                <a href="{{route('home')}}" class="text-nowrap logo-img">--}}
 {{--                    <img src="../assets/images/logos/dark-logo.svg" width="180" alt=""/>--}}
 {{--                </a>--}}
-                <h4><a class="text-nowrap nav-item" href="{{route('home')}}">Kamunting Library</a></h4>
+                <h4><a class="text-nowrap nav-item" href="{{route('home')}}">Rural Library</a></h4>
                 <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                     <i class="ti ti-x fs-8"></i>
                 </div>
@@ -49,7 +49,7 @@
                 <span>
                   <i class="ti ti-layout-dashboard"></i>
                 </span>
-                                    <span class="hide-menu">Volunteer</span>
+                                    <span class="hide-menu">List of User</span>
                                 </a>
                             </li>
                         @endif
@@ -94,7 +94,7 @@
                     @guest
                         <li class="nav-small-cap">
                             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">AUTH</span>
+                            <span class="hide-menu"></span>
                         </li>
                         @if (Route::has('login'))
                             <li class="sidebar-item">
